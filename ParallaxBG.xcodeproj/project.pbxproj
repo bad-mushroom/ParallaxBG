@@ -54,14 +54,46 @@
 		83DE09591C78A0EA002D8A8F /* ParallaxBG */ = {
 			isa = PBXGroup;
 			children = (
+				83DE096C1C78A184002D8A8F /* Assets */,
+				83DE096E1C78A19C002D8A8F /* Controllers */,
+				83DE096F1C78A4B0002D8A8F /* Scenes */,
+				83DE096D1C78A18D002D8A8F /* Sprites */,
 				83DE095A1C78A0EA002D8A8F /* AppDelegate.swift */,
-				83DE095C1C78A0EA002D8A8F /* ViewController.swift */,
-				83DE095E1C78A0EA002D8A8F /* Main.storyboard */,
-				83DE09611C78A0EA002D8A8F /* Assets.xcassets */,
-				83DE09631C78A0EA002D8A8F /* LaunchScreen.storyboard */,
 				83DE09661C78A0EA002D8A8F /* Info.plist */,
 			);
 			path = ParallaxBG;
+			sourceTree = "<group>";
+		};
+		83DE096C1C78A184002D8A8F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				83DE095E1C78A0EA002D8A8F /* Main.storyboard */,
+				83DE09631C78A0EA002D8A8F /* LaunchScreen.storyboard */,
+				83DE09611C78A0EA002D8A8F /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		83DE096D1C78A18D002D8A8F /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		83DE096E1C78A19C002D8A8F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83DE095C1C78A0EA002D8A8F /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		83DE096F1C78A4B0002D8A8F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +128,7 @@
 				TargetAttributes = {
 					83DE09561C78A0EA002D8A8F = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Q3969ADCNF;
 					};
 				};
 			};
@@ -249,7 +282,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ParallaxBG/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.2dsquirrel.apps.ParallaxBG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -260,7 +295,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ParallaxBG/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.2dsquirrel.apps.ParallaxBG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
