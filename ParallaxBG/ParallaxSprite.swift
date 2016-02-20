@@ -11,6 +11,7 @@ import SpriteKit
 class ParallaxSprite: SKSpriteNode
 {
     var parallaxSpeed: Double = 0.0
+    var scrollDirection: Int = -1
     
     required init(coder: NSCoder)
     {
@@ -26,13 +27,20 @@ class ParallaxSprite: SKSpriteNode
         parallaxSpeed = speed
         name = textureName
         position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame))
-
+        
+        if (parallaxSpeed == 0.0) {
+            zPosition = -1
+        }
     }
     
     func update()
     {
-        if parallaxSpeed > 0 {
-            position.x -= CGFloat(parallaxSpeed);
+        if (parallaxSpeed > 0) {
+            if (scrollDirection >= 0) {
+                position.x += CGFloat(parallaxSpeed);
+            } else {
+                position.x -= CGFloat(parallaxSpeed);
+            }
 
         }
     }
