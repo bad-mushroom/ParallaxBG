@@ -8,13 +8,7 @@
 
 import SpriteKit
 
-protocol ParallaxBackgroundDelegate
-{
-    var parallaxBackgrounds: [ParallaxSprite] { get set }
-    func addParallaxChild(parallaxSprite: ParallaxSprite)
-}
-
-class ParallaxScene: SKScene, ParallaxBackgroundDelegate
+class ParallaxScene: SKScene, ParallaxBGDelegate
 {
     var parallaxBackgrounds = [ParallaxSprite]()
     
