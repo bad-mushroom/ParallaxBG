@@ -11,7 +11,7 @@ import SpriteKit
 class ParallaxScene: SKScene, ParallaxDelegate
 {
     var parallaxBackgrounds = [ParallaxSprite]()
-    var currentBackgroundPositionX: Int = 0
+    var currentBackgroundPositionX: Int = -1
     
     override func didMoveToView(view: SKView)
     {
@@ -28,18 +28,13 @@ class ParallaxScene: SKScene, ParallaxDelegate
             ps.update(frame)
         }
     }
-    
-    func addParallaxChild(ps: ParallaxSprite)
-    {
-        addChild(ps)
-        parallaxBackgrounds.append(ps)
-    }
-    
+
     func addParallaxBackgroundSprite(textureName: String, speed: Double, size: CGSize)
     {
         for i in 0...1 {
             let ps = ParallaxSprite(textureName: textureName, speed: speed, size: size, secondary: i)
-            addParallaxChild(ps)
+            addChild(ps)
+            parallaxBackgrounds.append(ps)
         }
 
     }

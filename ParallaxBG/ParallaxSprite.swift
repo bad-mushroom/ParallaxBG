@@ -11,7 +11,7 @@ import SpriteKit
 class ParallaxSprite: SKSpriteNode
 {
     var parallaxSpeed: Double = 0.0
-    var scrollDirection: Int = -1
+    var scrollDirection: Int = 1
     
     required init(coder: NSCoder)
     {
@@ -32,7 +32,7 @@ class ParallaxSprite: SKSpriteNode
             zPosition = -1
         }
 
-        position = CGPointMake(self.size.width * CGFloat(secondary) - CGFloat(1 * secondary), CGRectGetMidY(frame))
+        position = CGPointMake(self.size.width * CGFloat(secondary), CGRectGetMidY(frame))
     }
 
     func update(sceneRect: CGRect)
@@ -44,7 +44,7 @@ class ParallaxSprite: SKSpriteNode
                 position.x += CGFloat(parallaxSpeed)
                 
                 if (CGRectGetMinX(frame) >= CGRectGetMaxX(sceneRect)) {
-                    position.x = -self.size.width + CGFloat(parallaxSpeed)
+                    position.x = -self.size.width
                 }
                 
             // Scroll Left
@@ -52,7 +52,7 @@ class ParallaxSprite: SKSpriteNode
                 position.x -= CGFloat(parallaxSpeed)
 
                 if (CGRectGetMaxX(frame) <= CGRectGetMinX(sceneRect)) {
-                     position.x = self.size.width - CGFloat(parallaxSpeed)
+                     position.x = self.size.width
                 }
             }
         }

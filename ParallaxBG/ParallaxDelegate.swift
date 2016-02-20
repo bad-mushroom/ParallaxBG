@@ -6,8 +6,10 @@
 //  Copyright © 2016 2DSquirrel. All rights reserved.
 //
 
+import SpriteKit
+
 protocol ParallaxDelegate
 {
     var parallaxBackgrounds: [ParallaxSprite] { get set }
-    func addParallaxChild(parallaxSprite: ParallaxSprite)
+    func addParallaxBackgroundSprite(textureName: String, speed: Double, size: CGSize)
 }
