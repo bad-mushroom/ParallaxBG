@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		83D306181C78A50F0056F534 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D306171C78A50F0056F534 /* SpriteKit.framework */; };
 		83D3061A1C78A5440056F534 /* ParallaxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D306191C78A5440056F534 /* ParallaxScene.swift */; };
+		83D3063E1C78ABA70056F534 /* ParallaxSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D3063D1C78ABA70056F534 /* ParallaxSprite.swift */; };
 		83DE095B1C78A0EA002D8A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE095A1C78A0EA002D8A8F /* AppDelegate.swift */; };
 		83DE095D1C78A0EA002D8A8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE095C1C78A0EA002D8A8F /* ViewController.swift */; };
 		83DE09601C78A0EA002D8A8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DE095E1C78A0EA002D8A8F /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		83D306171C78A50F0056F534 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		83D306191C78A5440056F534 /* ParallaxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxScene.swift; sourceTree = "<group>"; };
+		83D3063D1C78ABA70056F534 /* ParallaxSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxSprite.swift; sourceTree = "<group>"; };
 		83DE09571C78A0EA002D8A8F /* ParallaxBG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParallaxBG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DE095A1C78A0EA002D8A8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DE095C1C78A0EA002D8A8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		83DE096D1C78A18D002D8A8F /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				83D3063D1C78ABA70056F534 /* ParallaxSprite.swift */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				83DE095D1C78A0EA002D8A8F /* ViewController.swift in Sources */,
 				83D3061A1C78A5440056F534 /* ParallaxScene.swift in Sources */,
 				83DE095B1C78A0EA002D8A8F /* AppDelegate.swift in Sources */,
+				83D3063E1C78ABA70056F534 /* ParallaxSprite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
