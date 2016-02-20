@@ -10,6 +10,7 @@ import SpriteKit
 
 protocol ParallaxBackgroundDelegate
 {
+    var parallaxBackgrounds: [ParallaxSprite] { get set }
     func addParallaxChild(parallaxSprite: ParallaxSprite)
 }
 
