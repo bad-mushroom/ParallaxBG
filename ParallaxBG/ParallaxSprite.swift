@@ -21,35 +21,35 @@ class ParallaxSprite: SKSpriteNode
     init(textureName: String, speed: Double, size: CGSize, secondary: Int)
     {
         let texture = SKTexture(imageNamed: textureName)
-        
+    
         super.init(texture: texture, color: SKColor.clearColor(), size: size)
-        
+    
         parallaxSpeed = speed
         name = textureName
 
+        // Force static background behind others
         if (parallaxSpeed == 0.0) {
             zPosition = -1
         }
 
         position = CGPointMake(self.size.width * CGFloat(secondary) - CGFloat(1 * secondary), CGRectGetMidY(frame))
-        //   print(position)
     }
-    
-    func resetPosition(x: CGFloat)
-    {
-        position.x = x
-    }
-    
+
     func update(sceneRect: CGRect)
     {
         if (parallaxSpeed > 0) {
-            // right
+            
+            // Scroll Right
             if (scrollDirection >= 0) {
-                position.x += CGFloat(parallaxSpeed);
+                position.x += CGFloat(parallaxSpeed)
                 
-            // left
+                if (CGRectGetMinX(frame) >= CGRectGetMaxX(sceneRect)) {
+                    position.x = -self.size.width + CGFloat(parallaxSpeed)
+                }
+                
+            // Scroll Left
             } else {
-                position.x -= CGFloat(parallaxSpeed);
+                position.x -= CGFloat(parallaxSpeed)
 
                 if (CGRectGetMaxX(frame) <= CGRectGetMinX(sceneRect)) {
                      position.x = self.size.width - CGFloat(parallaxSpeed)
