@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83D306181C78A50F0056F534 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D306171C78A50F0056F534 /* SpriteKit.framework */; };
+		83D3061A1C78A5440056F534 /* ParallaxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D306191C78A5440056F534 /* ParallaxScene.swift */; };
 		83DE095B1C78A0EA002D8A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE095A1C78A0EA002D8A8F /* AppDelegate.swift */; };
 		83DE095D1C78A0EA002D8A8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DE095C1C78A0EA002D8A8F /* ViewController.swift */; };
 		83DE09601C78A0EA002D8A8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DE095E1C78A0EA002D8A8F /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83D306171C78A50F0056F534 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		83D306191C78A5440056F534 /* ParallaxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxScene.swift; sourceTree = "<group>"; };
 		83DE09571C78A0EA002D8A8F /* ParallaxBG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParallaxBG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DE095A1C78A0EA002D8A8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DE095C1C78A0EA002D8A8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D306181C78A50F0056F534 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +43,7 @@
 		83DE094E1C78A0EA002D8A8F = {
 			isa = PBXGroup;
 			children = (
+				83D306171C78A50F0056F534 /* SpriteKit.framework */,
 				83DE09591C78A0EA002D8A8F /* ParallaxBG */,
 				83DE09581C78A0EA002D8A8F /* Products */,
 			);
@@ -67,9 +73,9 @@
 		83DE096C1C78A184002D8A8F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				83DE09611C78A0EA002D8A8F /* Assets.xcassets */,
 				83DE095E1C78A0EA002D8A8F /* Main.storyboard */,
 				83DE09631C78A0EA002D8A8F /* LaunchScreen.storyboard */,
-				83DE09611C78A0EA002D8A8F /* Assets.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -92,6 +98,7 @@
 		83DE096F1C78A4B0002D8A8F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				83D306191C78A5440056F534 /* ParallaxScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -169,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83DE095D1C78A0EA002D8A8F /* ViewController.swift in Sources */,
+				83D3061A1C78A5440056F534 /* ParallaxScene.swift in Sources */,
 				83DE095B1C78A0EA002D8A8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +331,7 @@
 				83DE096B1C78A0EA002D8A8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
