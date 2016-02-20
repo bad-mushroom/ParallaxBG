@@ -8,35 +8,39 @@
 
 import SpriteKit
 
-class ParallaxScene: SKScene, ParallaxBGDelegate
+class ParallaxScene: SKScene, ParallaxDelegate
 {
     var parallaxBackgrounds = [ParallaxSprite]()
+    var currentBackgroundPositionX: Int = 0
     
     override func didMoveToView(view: SKView)
     {
         anchorPoint = CGPointMake(0.5, 0.5)
-        
-        let parallaxBackground1 = ParallaxSprite(textureName: "parallaxBackground1", speed: 0.0, size: frame.size)
-        let parallaxBackground2 = ParallaxSprite(textureName: "parallaxBackground2", speed: 0.75, size: frame.size)
-        let parallaxBackground3 = ParallaxSprite(textureName: "parallaxBackground3", speed: 1.5, size: frame.size)
 
-        addParallaxChild(parallaxBackground1)
-        addParallaxChild(parallaxBackground2)
-        addParallaxChild(parallaxBackground3)
+        addParallaxBackgroundSprite("parallaxBackground1", speed: 0.0, size: frame.size)
+        addParallaxBackgroundSprite("parallaxBackground2", speed: 3.25, size: frame.size)
+        addParallaxBackgroundSprite("parallaxBackground3", speed: 4.50, size: frame.size)
     }
     
     override func update(currentTime: CFTimeInterval)
     {
         for ps : ParallaxSprite in parallaxBackgrounds {
-            ps.update();
+            ps.update(frame)
         }
     }
     
-    func addParallaxChild(parallaxSprite: ParallaxSprite)
+    func addParallaxChild(ps: ParallaxSprite)
     {
-        addChild(parallaxSprite)
-        
-        parallaxBackgrounds.append(parallaxSprite)
+        addChild(ps)
+        parallaxBackgrounds.append(ps)
     }
     
+    func addParallaxBackgroundSprite(textureName: String, speed: Double, size: CGSize)
+    {
+        for i in 0...1 {
+            let ps = ParallaxSprite(textureName: textureName, speed: speed, size: size, secondary: i)
+            addParallaxChild(ps)
+        }
+
+    }
 }

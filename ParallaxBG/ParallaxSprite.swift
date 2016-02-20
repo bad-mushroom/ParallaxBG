@@ -18,7 +18,7 @@ class ParallaxSprite: SKSpriteNode
         fatalError("NSCoding not supported")
     }
     
-    init(textureName: String, speed: Double, size: CGSize)
+    init(textureName: String, speed: Double, size: CGSize, secondary: Int)
     {
         let texture = SKTexture(imageNamed: textureName)
         
@@ -26,22 +26,35 @@ class ParallaxSprite: SKSpriteNode
         
         parallaxSpeed = speed
         name = textureName
-        position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame))
-        
+
         if (parallaxSpeed == 0.0) {
             zPosition = -1
         }
+
+        position = CGPointMake(self.size.width * CGFloat(secondary) - CGFloat(1 * secondary), CGRectGetMidY(frame))
+        //   print(position)
     }
     
-    func update()
+    func resetPosition(x: CGFloat)
+    {
+        position.x = x
+    }
+    
+    func update(sceneRect: CGRect)
     {
         if (parallaxSpeed > 0) {
+            // right
             if (scrollDirection >= 0) {
                 position.x += CGFloat(parallaxSpeed);
+                
+            // left
             } else {
                 position.x -= CGFloat(parallaxSpeed);
-            }
 
+                if (CGRectGetMaxX(frame) <= CGRectGetMinX(sceneRect)) {
+                     position.x = self.size.width - CGFloat(parallaxSpeed)
+                }
+            }
         }
     }
 }

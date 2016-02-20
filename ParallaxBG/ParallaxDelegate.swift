@@ -6,7 +6,7 @@
 //  Copyright © 2016 2DSquirrel. All rights reserved.
 //
 
-protocol ParallaxBGDelegate
+protocol ParallaxDelegate
 {
     var parallaxBackgrounds: [ParallaxSprite] { get set }
     func addParallaxChild(parallaxSprite: ParallaxSprite)
