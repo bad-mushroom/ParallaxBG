@@ -8,8 +8,13 @@
 
 import SpriteKit
 
-protocol ParallaxDelegate
+@objc protocol ParallaxDelegate
 {
-    var parallaxBackgrounds: [ParallaxSprite] { get set }
-    func addParallaxBackgroundSprite(textureName: String, speed: Double, size: CGSize)
+    var parallaxSprites: [ParallaxSprite] { get set }
+    
+    func addParallaxSprite(textureName: String, speed: Double, size: CGSize, zIndex: CGFloat)
+    
+    optional func removeParallaxSprite(ps: ParallaxSprite)
+    optional func startParallaxScrolling()
+    optional func stopParallaxScrolling()
 }

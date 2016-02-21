@@ -10,32 +10,50 @@ import SpriteKit
 
 class ParallaxScene: SKScene, ParallaxDelegate
 {
-    var parallaxBackgrounds = [ParallaxSprite]()
+    var parallaxSprites = [ParallaxSprite]()
     var currentBackgroundPositionX: Int = -1
     
     override func didMoveToView(view: SKView)
     {
         anchorPoint = CGPointMake(0.5, 0.5)
 
-        addParallaxBackgroundSprite("parallaxBackground1", speed: 0.0, size: frame.size)
-        addParallaxBackgroundSprite("parallaxBackground2", speed: 3.25, size: frame.size)
-        addParallaxBackgroundSprite("parallaxBackground3", speed: 4.50, size: frame.size)
+        addParallaxSprite("parallaxBackground1", speed: 100, size: frame.size, zIndex: 0)
+        addParallaxSprite("parallaxBackground2", speed: 50, size: frame.size, zIndex: 1)
+        addParallaxSprite("parallaxBackground3", speed: 25, size: frame.size, zIndex: 2)
+        
+        startParallaxScrolling()
     }
     
-    override func update(currentTime: CFTimeInterval)
-    {
-        for ps : ParallaxSprite in parallaxBackgrounds {
-            ps.update(frame)
-        }
-    }
-
-    func addParallaxBackgroundSprite(textureName: String, speed: Double, size: CGSize)
+    // MARK: Parallax Delegate Methods
+    
+    func addParallaxSprite(textureName: String, speed: Double, size: CGSize, zIndex: CGFloat)
     {
         for i in 0...1 {
-            let ps = ParallaxSprite(textureName: textureName, speed: speed, size: size, secondary: i)
+            let ps = ParallaxSprite(textureName: textureName, speed: speed, size: size, zIndex: zIndex, secondary: i)
             addChild(ps)
-            parallaxBackgrounds.append(ps)
+            parallaxSprites.append(ps)
         }
-
+    }
+    
+    func removeParallaxSprite(ps: ParallaxSprite)
+    {
+        if let index = parallaxSprites.indexOf(ps) {
+            parallaxSprites.removeAtIndex(index)
+            ps.removeFromParent()
+        }
+    }
+    
+    func startParallaxScrolling()
+    {
+        for ps : ParallaxSprite in parallaxSprites {
+            ps.start()
+        }
+    }
+    
+    func stopParallaxScrolling()
+    {
+        for ps : ParallaxSprite in parallaxSprites {
+            ps.stop()
+        }
     }
 }
