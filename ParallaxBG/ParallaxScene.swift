@@ -17,19 +17,19 @@ class ParallaxScene: SKScene, ParallaxDelegate
     {
         anchorPoint = CGPointMake(0.5, 0.5)
 
-        addParallaxSprite("parallaxBackground1", speed: 100, size: frame.size, zIndex: 0)
-        addParallaxSprite("parallaxBackground2", speed: 50, size: frame.size, zIndex: 1)
-        addParallaxSprite("parallaxBackground3", speed: 25, size: frame.size, zIndex: 2)
+        addParallaxSprite("parallaxBackground1", duration: 100, size: frame.size, zIndex: 0)
+        addParallaxSprite("parallaxBackground2", duration: 50, size: frame.size, zIndex: 1)
+        addParallaxSprite("parallaxBackground3", duration: 25, size: frame.size, zIndex: 2)
         
         startParallaxScrolling()
     }
     
     // MARK: Parallax Delegate Methods
     
-    func addParallaxSprite(textureName: String, speed: Double, size: CGSize, zIndex: CGFloat)
+    func addParallaxSprite(textureName: String, duration: Double, size: CGSize, zIndex: CGFloat)
     {
         for i in 0...1 {
-            let ps = ParallaxSprite(textureName: textureName, speed: speed, size: size, zIndex: zIndex, secondary: i)
+            let ps = ParallaxSprite(textureName: textureName, duration: duration, size: size, zIndex: zIndex, secondary: i)
             addChild(ps)
             parallaxSprites.append(ps)
         }
@@ -45,14 +45,14 @@ class ParallaxScene: SKScene, ParallaxDelegate
     
     func startParallaxScrolling()
     {
-        for ps : ParallaxSprite in parallaxSprites {
+        for ps: ParallaxSprite in parallaxSprites {
             ps.start()
         }
     }
     
     func stopParallaxScrolling()
     {
-        for ps : ParallaxSprite in parallaxSprites {
+        for ps: ParallaxSprite in parallaxSprites {
             ps.stop()
         }
     }

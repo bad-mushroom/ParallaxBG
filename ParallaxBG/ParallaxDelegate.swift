@@ -12,7 +12,7 @@ import SpriteKit
 {
     var parallaxSprites: [ParallaxSprite] { get set }
     
-    func addParallaxSprite(textureName: String, speed: Double, size: CGSize, zIndex: CGFloat)
+    func addParallaxSprite(textureName: String, duration: Double, size: CGSize, zIndex: CGFloat)
     
     optional func removeParallaxSprite(ps: ParallaxSprite)
     optional func startParallaxScrolling()

@@ -10,21 +10,20 @@ import SpriteKit
 
 class ParallaxSprite: SKSpriteNode
 {
-    var parallaxSpeed: Double = 0.0
-    var scrollDirection: Int = -1
+    var scrollDuration: Double = 0.0
     
     required init(coder: NSCoder)
     {
         fatalError("NSCoding not supported")
     }
     
-    init(textureName: String, speed: Double, size: CGSize, zIndex: CGFloat, secondary: Int)
+    init(textureName: String, duration: Double, size: CGSize, zIndex: CGFloat, secondary: Int)
     {
         let texture = SKTexture(imageNamed: textureName)
     
         super.init(texture: texture, color: SKColor.clearColor(), size: size)
     
-        parallaxSpeed = speed
+        scrollDuration = duration
         name = textureName
         zPosition = zIndex
 
@@ -33,14 +32,9 @@ class ParallaxSprite: SKSpriteNode
 
     func start()
     {
-        var moveLoop = SKAction()
-        
-        if (scrollDirection <= 0) {
-            moveLoop = SKAction.moveByX(-self.size.width, y: 0, duration: NSTimeInterval(parallaxSpeed))
-        } else {
-            moveLoop = SKAction.moveByX(self.size.width, y: 0, duration: NSTimeInterval(parallaxSpeed))
-        }
- 
+        let moveLoop = SKAction.sequence([
+                SKAction.moveByX(-self.size.width, y: 0, duration: NSTimeInterval(scrollDuration)),
+                SKAction.moveByX(self.size.width, y: 0, duration: 0)])
         let scrollAction = SKAction.repeatActionForever(moveLoop)
         
         runAction(SKAction.repeatActionForever(scrollAction))
