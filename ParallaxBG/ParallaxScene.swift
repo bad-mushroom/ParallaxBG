@@ -11,7 +11,6 @@ import SpriteKit
 class ParallaxScene: SKScene, ParallaxDelegate
 {
     var parallaxSprites = [ParallaxSprite]()
-    var currentBackgroundPositionX: Int = -1
     
     override func didMoveToView(view: SKView)
     {
